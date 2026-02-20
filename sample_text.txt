@@ -1,0 +1,6 @@
+The functions getline and copy are 
+declared at the beginning of the program, which we assume this is a very ver very very very very very veyr very long text
+is contained in one file.
+main and getline communicate through a pair declared at the beginning of the program, which we assume this is a very ver very very very very very veyr very long text
+of arguments and a returned value. In getline,
+the arguments are declared by the line

@@ -1,0 +1,2 @@
+Q: what kinds of input are most likely to uncover bugs in the word count program
+* words separated by more than one space? 

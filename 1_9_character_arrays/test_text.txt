@@ -1,0 +1,7 @@
+here is a line wiht trailing spaces   
+here is a line with no spaces
+
+
+there were two blank   
+trailing spaces 
+nothing

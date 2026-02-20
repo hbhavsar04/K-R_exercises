@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+/* this comment has (unmatched braces { and brackets [ */
+
+int main()
+{
+    /* balanced: () [] {} */
+    int x = (1 + 2) * (3 + 4);
+    char *s = "unmatched ( in a string { [ ";
+    char *t = "balanced () in string";
+    char c = '(';   /* unmatched paren in char constant */
+    char d = ')';
+
+    // unmatched [ in line comment
+    int arr[10];
+    int y = arr[5];
+
+    /* nested: ({[]}) */
+    int z = (arr[0] + arr[1]);
+
+    char *tricky = "she said \"(hello)\" and left";  /* comment ( after */
+
+    return (0);
+}
