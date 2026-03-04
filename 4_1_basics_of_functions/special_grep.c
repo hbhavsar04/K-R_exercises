@@ -18,12 +18,11 @@ int main()
 		l[i] = '\0';
 		pattern[i] = '\0';
 	}
-	pattern[0] = 'n';
-	pattern[1] = 'o';
-	pattern[2] = 't';
+	pattern[0] = 'i';
 	while ((g = get_line(l)) != 0){
 		if ((i = strindex(l, pattern)) >= 0){
 			printf("%s", l);
+			printf("%d\n", i);
 		}
 	}
 }
@@ -46,11 +45,7 @@ int strindex(char s[], char t[])
 			}
 		}
 	}
-	if (success == 0){
-		return -1;
-	} else {
-		return 0;
-	}
+	return -1;
 }
 
 int get_line (char line[])
