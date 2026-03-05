@@ -3,7 +3,7 @@
 double atof(char s[])
 {
 	double val, power;
-	int i, sign;
+	int i, sign, exp_sign, exp_val;
 	for (i = 0; isspace(s[i]); i++) //skips white space
 		;
 	sign = (s[i] == '-') ? -1 : 1;
@@ -16,6 +16,25 @@ double atof(char s[])
 	for (power = 1.0; isdigit(s[i]); i++){
 		val = 10.0 * val + (s[i] - '0');
 		power *= 10;
+	}
+	// handle scientific notation
+	if (s[i] == 'e' || s[i] == 'E')
+		i++;
+	exp_sign = (s[i] == '-') ? -1 : 1;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	for (exp_val = 0; isdigit(s[i]); i++)
+		exp_val = 10 * exp_val + (s[i] - '0');
+	if (exp_sign < 0){
+		while (exp_val > 0){
+			power *= 10;
+			--exp_val;
+		}
+	} else{
+		while (exp_val > 0){
+			power /= 10;
+			--exp_val;
+		}
 	}
 	return sign * val / power;
 }
