@@ -25,6 +25,7 @@ int main()
 {
 	int type;
 	double op2;
+	int iop1, iop2;
 	char s[MAXOP];
 	while ((type = getop(s)) != EOF){
 		switch (type){
@@ -47,6 +48,14 @@ int main()
 				push(pop() / op2);
 			else
 				printf("error: zero divisor");
+			break;
+		case '%':
+			iop2 = pop();
+			iop1 = pop();
+			if (iop1 != 0)
+				push(iop1 % iop2);
+			else
+				printf("error:zero division");
 			break;
 		case '\n':
 			printf("\t%.8g\n", pop());
