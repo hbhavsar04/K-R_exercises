@@ -26,3 +26,8 @@ void peek(int entries)
 	for (i = entries; i > 0; --i)
 		printf("%f\n", val[sp - i]);
 }
+void dupe(void)
+{
+	val[sp] = val[sp - 1];
+	++sp;
+}

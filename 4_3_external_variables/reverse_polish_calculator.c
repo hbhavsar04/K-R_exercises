@@ -22,6 +22,7 @@ int getop(char []);
 void push(double);
 double pop(void);
 void peek(int entries);
+void dupe(void);
 int main()
 {
 	int type;
@@ -60,6 +61,9 @@ int main()
 			break;
 		case 'p': //print top two elements without popping
 			peek(2);
+			break;
+		case 'd':
+			dupe();
 			break;
 		case '\n':
 			printf("\t%.8g\n", pop());
