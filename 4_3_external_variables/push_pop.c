@@ -20,3 +20,9 @@ double pop(void)
 		return 0.0;
 	}
 }
+void peek(int entries)
+{
+	int i;
+	for (i = entries; i > 0; --i)
+		printf("%f\n", val[sp - i]);
+}

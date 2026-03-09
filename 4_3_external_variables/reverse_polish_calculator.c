@@ -21,6 +21,7 @@
 int getop(char []);
 void push(double);
 double pop(void);
+void peek(int entries);
 int main()
 {
 	int type;
@@ -57,8 +58,12 @@ int main()
 			else
 				printf("error:zero division");
 			break;
+		case 'p': //print top two elements without popping
+			peek(2);
+			break;
 		case '\n':
 			printf("\t%.8g\n", pop());
+			break;
 		default:
 			printf("error: unkown command %s\n", s);
 			break;
