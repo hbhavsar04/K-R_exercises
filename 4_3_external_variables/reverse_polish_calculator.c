@@ -24,6 +24,7 @@ double pop(void);
 void peek(int entries);
 void dupe(void);
 void swap(void);
+void clear(void);
 int main()
 {
 	int type;
@@ -68,6 +69,9 @@ int main()
 			break;
 		case 's':
 			swap();
+			break;
+		case 'c':
+			clear();
 			break;
 		case '\n':
 			printf("\t%.8g\n", pop());

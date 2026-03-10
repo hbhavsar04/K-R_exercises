@@ -38,3 +38,10 @@ void swap(void)
 	val[sp - 1] = val[sp - 2];
 	val[sp - 2] = top;
 }
+void clear(void)
+{
+	int i;
+	for (i = 0; i < MAXVAL; i++)
+		val[i] = '\0';
+	sp = 0;
+}
