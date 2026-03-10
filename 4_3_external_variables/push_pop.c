@@ -31,3 +31,10 @@ void dupe(void)
 	val[sp] = val[sp - 1];
 	++sp;
 }
+void swap(void)
+{
+	double top;
+	top = val[sp - 1];
+	val[sp - 1] = val[sp - 2];
+	val[sp - 2] = top;
+}

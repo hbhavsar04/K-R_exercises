@@ -23,6 +23,7 @@ void push(double);
 double pop(void);
 void peek(int entries);
 void dupe(void);
+void swap(void);
 int main()
 {
 	int type;
@@ -64,6 +65,9 @@ int main()
 			break;
 		case 'd':
 			dupe();
+			break;
+		case 's':
+			swap();
 			break;
 		case '\n':
 			printf("\t%.8g\n", pop());
