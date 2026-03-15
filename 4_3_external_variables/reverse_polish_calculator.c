@@ -1,5 +1,5 @@
 #include "calc.h"
-
+#include <math.h>
 // reverse Polish notation calculator
 // the overal structure will look something like:
 // 	while(next operator or operand is not at EOF)
@@ -73,6 +73,14 @@ int main()
 		case 'c':
 			clear();
 			break;
+		case 'n': // sin
+			push(sin(pop()));
+		case 'e': // exp
+			push(exp(pop()));
+		case 'w': // pow
+			op2 = pop();
+			push(pow(pop(), op2));
+
 		case '\n':
 			printf("\t%.8g\n", pop());
 			break;
