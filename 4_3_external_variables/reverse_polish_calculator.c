@@ -1,5 +1,6 @@
-#include "calc.h"
 #include <math.h>
+#include "calc.h"
+#include <ctype.h>
 // reverse Polish notation calculator
 // the overal structure will look something like:
 // 	while(next operator or operand is not at EOF)
@@ -31,6 +32,7 @@ int main()
 	double op2;
 	int iop1, iop2;
 	char s[MAXOP];
+	double v; 
 	while ((type = getop(s)) != EOF){
 		switch (type){
 		case NUMBER:
@@ -73,14 +75,27 @@ int main()
 		case 'c':
 			clear();
 			break;
+		/*
+		 * for some reason, this is causing problems with make. idk why rn
 		case 'n': // sin
-			push(sin(pop()));
+			double t = sin(pop());
+			push(t);
+			break;
 		case 'e': // exp
 			push(exp(pop()));
+			break;
 		case 'w': // pow
 			op2 = pop();
 			push(pow(pop(), op2));
-
+			break;
+		*/
+		case '=':
+			v = pop();
+			v = pop();
+			break;
+		case 'v':
+			push(v);
+			break;
 		case '\n':
 			printf("\t%.8g\n", pop());
 			break;
