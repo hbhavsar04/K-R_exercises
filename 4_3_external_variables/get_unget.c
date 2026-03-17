@@ -1,19 +1,19 @@
 #include "calc.h"
 #define BUFSIZE 100
 
-char buf[BUFSIZE];
-int bufp = 0;
+char buf;
+char buf = 0;
 int getch(void)
 {
-	return (bufp > 0) ? buf[--bufp] : getchar();
+	return (buf != 0) ? buf = 0 : getchar();
 }
 
 void ungetch(int c)
 {
-	if (bufp >= BUFSIZE)
+	/*if (bufp >= BUFSIZE)
 		printf("ungetch: too many chars\n");
-	else
-		buf[bufp++] = c;
+		*/
+	buf = c;
 }
 // ungets(s)
 // pushes back an entire string onto the input
@@ -25,3 +25,4 @@ void ungets(char s[])
 		ungetch(c);
 	}	
 }
+
