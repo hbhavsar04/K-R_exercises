@@ -5,6 +5,8 @@ char buf;
 char buf = 0;
 int getch(void)
 {
+	if (buf == EOF)
+		return // plane is landing, figure out this later
 	return (buf != 0) ? buf = 0 : getchar();
 }
 
